@@ -1,11 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
 import {
   SiTypescript,
   SiReact,
   SiNodedotjs,
   SiPython,
   SiSolidity,
+  SiLeetcode,
 } from "react-icons/si";
 import { useState } from "react";
 
@@ -37,31 +38,50 @@ const projects = [
 
 const experience = [
   {
-    title: "Senior Fullstack Developer",
-    company: "Fintech Solutions Inc.",
-    period: "2021 - Present",
+    title: "Blockchain Developer",
+    company: "Sberbank",
+    period: "2023 - Present",
     description:
-      "Leading development of blockchain-based financial applications",
+      "Leading development of blockchain-based financial applications and smart contracts",
   },
   {
-    title: "Fullstack Developer",
-    company: "AI Innovations Ltd",
-    period: "2019 - 2021",
-    description: "Developed machine learning solutions for financial markets",
+    title: "Co-founder & CTO & Lead Blockchain Developer",
+    company: "Techfrens",
+    period: "2024 - Present",
+    description: "Leading the development of the blockchain&backend part in custom products",
   },
+  {
+    title: "Blockchain Developer",
+    company: "TON Application Chain",
+    period: "2024 - 2025",
+    description: "Developed Smart contracts, Sequencer, and SDK for L2-EVM solution on TON",
+  },
+  {
+    title: "Backend Developer",
+    company: "Open Mobile Platform | International Aero Navigation System Concern",
+    period: "2022 - 2023",
+    description: "Developed backend services for remote management of mobile devices/UAVs.",
+  },
+  {
+    title: "Frontend Developer",
+    company: "MTS | Wise City | Profiterole",
+    period: "2021 - 2022",
+    description: "Developed frontend, including UI libraries, for mayor's site, blockchain games, smart home management systems.",
+  },
+
 ];
 
 const education = [
   {
     degree: "Master of Computer Science",
-    school: "Tech University",
-    period: "2017 - 2019",
+    school: "Moscow Institute of Physics and Technology",
+    period: "2023 - 2025",
     focus: "Artificial Intelligence & Blockchain",
   },
   {
     degree: "Bachelor of Computer Science",
-    school: "State University",
-    period: "2013 - 2017",
+    school: "Innopolis University",
+    period: "2019 - 2023",
     focus: "Software Engineering",
   },
 ];
@@ -206,7 +226,7 @@ function App() {
                   <div className="relative w-32 h-32 mb-4">
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-200 to-blue-300 animate-pulse"></div>
                     <img
-                      src="/profile.jpg"
+                      src="/src/assets/me.jpg"
                       alt="Profile"
                       className="relative w-full h-full rounded-full object-cover border-4 border-white shadow-lg"
                       onError={(e) => {
@@ -215,7 +235,7 @@ function App() {
                     />
                   </div>
                   <h1 className="text-2xl font-bold text-center text-blue-900">
-                    Your Name
+                    Danila Moriakov
                   </h1>
                   <p className="text-blue-600 text-sm text-center">
                     Fullstack Developer
@@ -242,7 +262,7 @@ function App() {
                 </h2>
                 <div className="flex justify-center space-x-6">
                   <a
-                    href="https://github.com/username"
+                    href="https://github.com/danmory"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-900 transition-colors"
@@ -250,7 +270,7 @@ function App() {
                     <FaGithub className="w-6 h-6" />
                   </a>
                   <a
-                    href="https://linkedin.com/in/username"
+                    href="https://linkedin.com/in/danila-moriakov-492989227"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-900 transition-colors"
@@ -258,12 +278,20 @@ function App() {
                     <FaLinkedin className="w-6 h-6" />
                   </a>
                   <a
-                    href="https://twitter.com/username"
+                    href="https://t.me/danmory"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-900 transition-colors"
                   >
-                    <FaTwitter className="w-6 h-6" />
+                    <FaTelegram className="w-6 h-6" />
+                  </a>
+                  <a
+                    href="https://leetcode.com/danmory"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-900 transition-colors"
+                  >
+                    <SiLeetcode className="w-6 h-6" />
                   </a>
                 </div>
               </motion.div>
