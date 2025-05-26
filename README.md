@@ -1,18 +1,24 @@
-# Personal Landing Page
+# Developer Portfolio Landing Page
 
-A modern, responsive, and bilingual (EN/RU) landing page built with React, TypeScript, and Tailwind CSS.
+A modern, minimalist landing page for a fullstack developer specializing in Fintech, Blockchain, and AI solutions.
 
 ## Features
 
-- 🌐 Bilingual support (English/Russian)
-- 🎨 Modern and clean design
-- 📱 Fully responsive
-- 🎭 Smooth animations with Framer Motion
-- 🖼️ Project showcase with image slider
-- 💬 Quote carousel
-- 📊 Interactive skills and values visualization
-- 📝 Contact form
-- 🎯 Easy to customize and extend
+- Clean, modern design with a neutral color palette
+- Responsive layout that works on all devices
+- Smooth animations and transitions
+- Project showcase with tech stack icons
+- Social media integration
+- Built with React, TypeScript, and Tailwind CSS
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Vite
+- React Icons
 
 ## Getting Started
 
@@ -25,76 +31,23 @@ A modern, responsive, and bilingual (EN/RU) landing page built with React, TypeS
    ```bash
    npm run dev
    ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Customization
 
-### Adding Projects
+1. Update project information in `src/App.tsx`
+2. Modify social media links in the contact section
+3. Customize the about section text
+4. Adjust colors in `tailwind.config.js`
+5. Replace the favicon in `public/` directory
 
-Edit the `projects` array in `src/components/Experience.tsx`:
+## Building for Production
 
-```typescript
-const projects: Project[] = [
-  {
-    title: 'Your Project',
-    description: 'Project description',
-    image: '/projects/your-image.jpg',
-    technologies: ['React', 'TypeScript', 'etc'],
-  },
-  // Add more projects...
-];
+```bash
+npm run build
 ```
 
-### Adding Quotes
-
-Edit the `quotes` array in `src/components/Values.tsx`:
-
-```typescript
-const quotes: Quote[] = [
-  {
-    text: 'Your quote',
-    author: 'Author Name',
-    source: 'Source',
-  },
-  // Add more quotes...
-];
-```
-
-### Adding Images
-
-1. Place your images in the `public` directory
-2. Update image paths in the components
-3. For project images: `public/projects/`
-4. For interest images: `public/interests/`
-
-### Modifying Content
-
-1. Update translations in `src/i18n/config.ts`
-2. Modify component content in respective files
-3. Update contact information in `src/components/Contact.tsx`
-
-## Deployment
-
-The site is configured for GitHub Pages deployment. To deploy:
-
-1. Update the `homepage` field in `package.json` with your GitHub Pages URL
-2. Run the build command:
-   ```bash
-   npm run build
-   ```
-3. Deploy to GitHub Pages:
-   ```bash
-   npm run deploy
-   ```
-
-## Technologies Used
-
-- React
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- React Slick
-- i18next
-- Vite
+The build output will be in the `dist` directory.
 
 ## License
 
