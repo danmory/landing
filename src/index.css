@@ -6,7 +6,7 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply antialiased;
   }
@@ -16,8 +16,8 @@
   .btn {
     @apply px-4 py-2 rounded-md transition-all duration-200;
   }
-  
+
   .btn-primary {
     @apply bg-gray-900 text-white hover:bg-gray-800;
   }
-} 
+}
