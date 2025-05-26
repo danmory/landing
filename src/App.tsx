@@ -5,34 +5,58 @@ import {
   SiReact,
   SiNodedotjs,
   SiPython,
-  SiSolidity,
   SiLeetcode,
+  SiGo,
+  SiTon,
+  SiScala,
+  SiTelegram,
+  SiBitcoin,
+  SiEthereum,
+  SiSolidity,
+  SiOpenai,
+  SiLangchain,
+  SiDocker,
+  SiPostgresql,
+  SiMongodb,
 } from "react-icons/si";
 import { useState } from "react";
 
 const projects = [
   {
-    title: "DeFi Protocol",
-    description: "A decentralized finance protocol for automated market making",
-    tech: [SiSolidity, SiReact, SiTypescript],
-    demo: "https://demo.defi-protocol.com",
-    repo: "https://github.com/username/defi-protocol",
+    title: "Legal documents to Smart Contracts",
+    description: "Translation of Legal documents to Smart Contracts using LLM",
+    tech: [SiPython, SiSolidity, SiOpenai, SiLangchain],
   },
   {
-    title: "AI Trading Bot",
-    description:
-      "Machine learning powered trading bot for cryptocurrency markets",
-    tech: [SiPython, SiReact, SiTypescript],
-    demo: "https://demo.ai-trading.com",
-    repo: "https://github.com/username/ai-trading",
+    title: "Blockchain for DFA",
+    description: "Sberbank L1 Blockchain for digital financial assets",
+    tech: [SiScala, SiPostgresql],
+  },
+  {
+    title: "TON Application Chain",
+    description: "EVM Adapter for TON",
+    tech: [SiGo, SiTon, SiNodedotjs, SiDocker, SiMongodb, SiPostgresql],
+  },
+  {
+    title: "TON Arena",
+    description: "A decentralized prediction market on TON",
+    tech: [SiPython, SiReact, SiTypescript, SiTon, SiDocker, SiMongodb],
   },
   {
     title: "Blockchain Explorer",
     description:
-      "Real-time blockchain data visualization and analytics platform",
+      "Real-time blockchain data visualization for Sberbank blockchain",
     tech: [SiNodedotjs, SiReact, SiTypescript],
-    demo: "https://demo.blockchain-explorer.com",
-    repo: "https://github.com/username/blockchain-explorer",
+  },
+  {
+    title: "Custodial Wallet",
+    description: "Custodial wallet for Etherem & Bitcoin",
+    tech: [SiScala, SiPython, SiTelegram, SiBitcoin, SiEthereum],
+  },
+  {
+    title: "Lucky Shot",
+    description: "Russian roullete single/multiplayer game in Telegram",
+    tech: [SiGo, SiReact, SiTypescript, SiTon, SiTelegram, SiDocker],
   },
 ];
 
@@ -48,27 +72,31 @@ const experience = [
     title: "Co-founder & CTO & Lead Blockchain Developer",
     company: "Techfrens",
     period: "2024 - Present",
-    description: "Leading the development of the blockchain&backend part in custom products",
+    description:
+      "Leading the development of the blockchain&backend part in custom products",
   },
   {
     title: "Blockchain Developer",
     company: "TON Application Chain",
     period: "2024 - 2025",
-    description: "Developed Smart contracts, Sequencer, and SDK for L2-EVM solution on TON",
+    description:
+      "Developed Smart contracts, Sequencer, and SDK for L2-EVM solution on TON",
   },
   {
     title: "Backend Developer",
-    company: "Open Mobile Platform | International Aero Navigation System Concern",
+    company:
+      "Open Mobile Platform | International Aero Navigation System Concern",
     period: "2022 - 2023",
-    description: "Developed backend services for remote management of mobile devices/UAVs.",
+    description:
+      "Developed backend services for remote management of mobile devices/UAVs.",
   },
   {
     title: "Frontend Developer",
     company: "MTS | Wise City | Profiterole",
     period: "2021 - 2022",
-    description: "Developed frontend, including UI libraries, for mayor's site, blockchain games, smart home management systems.",
+    description:
+      "Developed frontend, including UI libraries, for mayor's site, blockchain games, smart home management systems.",
   },
-
 ];
 
 const education = [
@@ -124,24 +152,28 @@ function App() {
                     ))}
                   </div>
                 </div>
-                <div className="flex gap-3">
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-blue-600 hover:text-blue-900 transition-colors"
-                  >
-                    Demo
-                  </a>
-                  <a
-                    href={project.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-blue-600 hover:text-blue-900 transition-colors"
-                  >
-                    Repo
-                  </a>
-                </div>
+                {/* <div className="flex gap-3">
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-600 hover:text-blue-900 transition-colors"
+                    >
+                      Demo
+                    </a>
+                  )}
+                  {project.repo && (
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-600 hover:text-blue-900 transition-colors"
+                    >
+                      Repo
+                    </a>
+                  )}
+                </div> */}
               </div>
             </motion.div>
           ))}
@@ -242,7 +274,7 @@ function App() {
                   </p>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Expert Blockchain & Backend Engineer with deep expertise in AI
+                  Expert Blockchain & Backend Engineer with expertise in AI
                   integration. Specializing in DeFi protocols, smart contracts,
                   and high-performance distributed systems. Delivers scalable,
                   production-ready solutions with full ownership from concept to
