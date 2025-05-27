@@ -20,97 +20,65 @@ import {
   SiMongodb,
 } from "react-icons/si";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "./components/LanguageSwitcher";
+import "./i18n/config";
 
 const projects = [
   {
-    title: "Legal documents to Smart Contracts",
-    description: "Translation of Legal documents to Smart Contracts using LLM",
+    key: "legalDocuments",
     tech: [SiPython, SiSolidity, SiOpenai, SiLangchain],
   },
   {
-    title: "Blockchain for DFA",
-    description: "Sberbank L1 Blockchain for digital financial assets",
+    key: "blockchainDFA",
     tech: [SiScala, SiPostgresql],
   },
   {
-    title: "TON Application Chain",
-    description: "EVM Adapter for TON",
+    key: "tonAppChain",
     tech: [SiGo, SiTon, SiNodedotjs, SiDocker, SiMongodb, SiPostgresql],
   },
   {
-    title: "TON Arena",
-    description: "A decentralized prediction market on TON",
+    key: "tonArena",
     tech: [SiPython, SiReact, SiTypescript, SiTon, SiDocker, SiMongodb],
   },
   {
-    title: "Blockchain Explorer",
-    description:
-      "Real-time blockchain data visualization for Sberbank blockchain",
+    key: "blockchainExplorer",
     tech: [SiNodedotjs, SiReact, SiTypescript],
   },
   {
-    title: "Custodial Wallet",
-    description: "Custodial wallet for Etherem & Bitcoin",
+    key: "custodialWallet",
     tech: [SiScala, SiPython, SiTelegram, SiBitcoin, SiEthereum],
   },
   {
-    title: "Lucky Shot",
-    description: "Russian roullete single/multiplayer game in Telegram",
+    key: "luckyShot",
     tech: [SiGo, SiReact, SiTypescript, SiTon, SiTelegram, SiDocker],
   },
 ];
 
 const experience = [
   {
-    title: "Blockchain Developer",
-    company: "Sberbank",
-    period: "2023 - Present",
-    description:
-      "Leading development of blockchain-based financial applications and smart contracts",
+    key: "sberbank",
   },
   {
-    title: "Co-founder & CTO & Lead Blockchain Developer",
-    company: "Techfrens",
-    period: "2024 - Present",
-    description:
-      "Leading the development of the blockchain&backend part in custom products",
+    key: "techfrens",
   },
   {
-    title: "Blockchain Developer",
-    company: "TON Application Chain",
-    period: "2024 - 2025",
-    description:
-      "Developed Smart contracts, Sequencer, and SDK for L2-EVM solution on TON",
+    key: "tonAppChain",
   },
   {
-    title: "Backend Developer",
-    company:
-      "Open Mobile Platform | International Aero Navigation System Concern",
-    period: "2022 - 2023",
-    description:
-      "Developed backend services for remote management of mobile devices/UAVs.",
+    key: "openMobile",
   },
   {
-    title: "Frontend Developer",
-    company: "MTS | Wise City | Profiterole",
-    period: "2021 - 2022",
-    description:
-      "Developed frontend, including UI libraries, for mayor's site, blockchain games, smart home management systems.",
+    key: "mts",
   },
 ];
 
 const education = [
   {
-    degree: "Master of Computer Science",
-    school: "Moscow Institute of Physics and Technology",
-    period: "2023 - 2025",
-    focus: "Artificial Intelligence & Blockchain",
+    key: "masters",
   },
   {
-    degree: "Bachelor of Computer Science",
-    school: "Innopolis University",
-    period: "2019 - 2023",
-    focus: "Software Engineering",
+    key: "bachelors",
   },
 ];
 
@@ -123,6 +91,7 @@ type TabType = "projects" | "experience" | "education";
 
 function App() {
   const [activeTab, setActiveTab] = useState<TabType>("projects");
+  const { t } = useTranslation();
 
   const renderContent = () => {
     const content = {
@@ -130,7 +99,7 @@ function App() {
         <div className="grid grid-cols-1 gap-6">
           {projects.map((project, index) => (
             <motion.div
-              key={project.title}
+              key={project.key}
               initial="hidden"
               animate="visible"
               variants={fadeIn}
@@ -141,10 +110,10 @@ function App() {
               <div className="flex justify-between items-start">
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-blue-900">
-                    {project.title}
+                    {t(`projects.${project.key}.title`)}
                   </h3>
                   <p className="text-sm text-gray-600 mb-3">
-                    {project.description}
+                    {t(`projects.${project.key}.description`)}
                   </p>
                   <div className="flex gap-3 mb-3">
                     {project.tech.map((Icon, i) => (
@@ -152,28 +121,6 @@ function App() {
                     ))}
                   </div>
                 </div>
-                {/* <div className="flex gap-3">
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-blue-600 hover:text-blue-900 transition-colors"
-                    >
-                      Demo
-                    </a>
-                  )}
-                  {project.repo && (
-                    <a
-                      href={project.repo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-blue-600 hover:text-blue-900 transition-colors"
-                    >
-                      Repo
-                    </a>
-                  )}
-                </div> */}
               </div>
             </motion.div>
           ))}
@@ -183,7 +130,7 @@ function App() {
         <div className="grid grid-cols-1 gap-6">
           {experience.map((job, index) => (
             <motion.div
-              key={job.title}
+              key={job.key}
               initial="hidden"
               animate="visible"
               variants={fadeIn}
@@ -191,11 +138,17 @@ function App() {
               className="border border-blue-100 rounded-lg p-4 bg-gradient-to-br from-white to-blue-50"
             >
               <h3 className="text-lg font-semibold mb-1 text-blue-900">
-                {job.title}
+                {t(`experience.${job.key}.title`)}
               </h3>
-              <p className="text-sm text-blue-600 mb-2">{job.company}</p>
-              <p className="text-sm text-gray-500 mb-2">{job.period}</p>
-              <p className="text-sm text-gray-600">{job.description}</p>
+              <p className="text-sm text-blue-600 mb-2">
+                {t(`experience.${job.key}.company`)}
+              </p>
+              <p className="text-sm text-gray-500 mb-2">
+                {t(`experience.${job.key}.period`)}
+              </p>
+              <p className="text-sm text-gray-600">
+                {t(`experience.${job.key}.description`)}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -204,7 +157,7 @@ function App() {
         <div className="grid grid-cols-1 gap-6">
           {education.map((edu, index) => (
             <motion.div
-              key={edu.degree}
+              key={edu.key}
               initial="hidden"
               animate="visible"
               variants={fadeIn}
@@ -212,11 +165,17 @@ function App() {
               className="border border-blue-100 rounded-lg p-4 bg-gradient-to-br from-white to-blue-50"
             >
               <h3 className="text-lg font-semibold mb-1 text-blue-900">
-                {edu.degree}
+                {t(`education.${edu.key}.degree`)}
               </h3>
-              <p className="text-sm text-blue-600 mb-2">{edu.school}</p>
-              <p className="text-sm text-gray-500 mb-2">{edu.period}</p>
-              <p className="text-sm text-gray-600">{edu.focus}</p>
+              <p className="text-sm text-blue-600 mb-2">
+                {t(`education.${edu.key}.school`)}
+              </p>
+              <p className="text-sm text-gray-500 mb-2">
+                {t(`education.${edu.key}.period`)}
+              </p>
+              <p className="text-sm text-gray-600">
+                {t(`education.${edu.key}.focus`)}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -241,6 +200,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white text-gray-900 flex items-center">
+      <LanguageSwitcher />
       {/* Main Content */}
       <div className="w-full max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-12 gap-8">
@@ -267,18 +227,14 @@ function App() {
                     />
                   </div>
                   <h1 className="text-2xl font-bold text-center text-blue-900">
-                    Danila Moriakov
+                    {t('about.name')}
                   </h1>
                   <p className="text-blue-600 text-sm text-center">
-                    Fullstack Developer
+                    {t('about.title')}
                   </p>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Expert Blockchain & Backend Engineer with expertise in AI
-                  integration. Specializing in DeFi protocols, smart contracts,
-                  and high-performance distributed systems. Delivers scalable,
-                  production-ready solutions with full ownership from concept to
-                  deployment.
+                  {t('about.description')}
                 </p>
               </motion.div>
 
@@ -290,7 +246,7 @@ function App() {
                 className="bg-white rounded-lg shadow-sm p-6 bg-gradient-to-br from-white to-blue-50 border border-blue-100"
               >
                 <h2 className="text-2xl font-bold mb-4 text-blue-900">
-                  Get in Touch
+                  {t('contact.title')}
                 </h2>
                 <div className="flex justify-center space-x-6">
                   <a
@@ -340,9 +296,9 @@ function App() {
             >
               <div className="flex space-x-8 border-b border-blue-100 mb-6">
                 {[
-                  { id: "projects", label: "Featured Projects" },
-                  { id: "experience", label: "Work Experience" },
-                  { id: "education", label: "Education" },
+                  { id: "projects", label: t('tabs.featuredProjects') },
+                  { id: "experience", label: t('tabs.workExperience') },
+                  { id: "education", label: t('tabs.education') },
                 ].map((tab) => (
                   <button
                     key={tab.id}

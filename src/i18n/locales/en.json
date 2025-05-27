@@ -1,0 +1,93 @@
+{
+  "tabs": {
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "featuredProjects": "Featured Projects",
+    "workExperience": "Work Experience"
+  },
+  "about": {
+    "name": "Danila Moriakov",
+    "title": "Fullstack Developer",
+    "description": "Expert Blockchain & Backend Engineer with expertise in AI integration. Specializing in DeFi protocols, smart contracts, web services and distributed systems. Deliver scalable, production-ready solutions with full ownership from concept to deployment."
+  },
+  "contact": {
+    "title": "Get in Touch"
+  },
+  "projects": {
+    "legalDocuments": {
+      "title": "Legal documents to Smart Contracts",
+      "description": "Implementation of Translation of Legal documents to Smart Contracts using LLM"
+    },
+    "blockchainDFA": {
+      "title": "Blockchain for DFA",
+      "description": "Development of Sberbank L1 Blockchain for digital financial assets"
+    },
+    "tonAppChain": {
+      "title": "TON Application Chain",
+      "description": "Development of EVM Adapter for TON"
+    },
+    "tonArena": {
+      "title": "TON Arena",
+      "description": "Development of Decentralized prediction market on TON"
+    },
+    "blockchainExplorer": {
+      "title": "Blockchain Explorer",
+      "description": "Development of Real-time blockchain data visualization for Sberbank blockchain"
+    },
+    "custodialWallet": {
+      "title": "Custodial Wallet",
+      "description": "Development of Custodial wallet for Etherem & Bitcoin"
+    },
+    "luckyShot": {
+      "title": "Lucky Shot",
+      "description": "Development of Russian roullete single/multiplayer game in Telegram"
+    }
+  },
+  "experience": {
+    "sberbank": {
+      "title": "Blockchain Developer",
+      "company": "Sberbank",
+      "period": "2023 - Present",
+      "description": "Leading development of blockchain-based financial applications and smart contracts"
+    },
+    "techfrens": {
+      "title": "Co-founder & CTO & Lead Blockchain Developer",
+      "company": "Techfrens",
+      "period": "2024 - Present",
+      "description": "Leading the development of the blockchain&backend part in custom products"
+    },
+    "tonAppChain": {
+      "title": "Blockchain Developer",
+      "company": "TON Application Chain",
+      "period": "2024 - 2025",
+      "description": "Developed Smart contracts, Sequencer, and SDK for L2-EVM solution on TON"
+    },
+    "openMobile": {
+      "title": "Backend Developer",
+      "company": "Open Mobile Platform | International Aero Navigation System Concern",
+      "period": "2022 - 2023",
+      "description": "Developed backend services for remote management of mobile devices/UAVs."
+    },
+    "mts": {
+      "title": "Frontend Developer",
+      "company": "MTS | Wise City | Profiterole",
+      "period": "2021 - 2022",
+      "description": "Developed frontend, including UI libraries, for mayor's site, blockchain games, smart home management systems."
+    }
+  },
+  "education": {
+    "masters": {
+      "degree": "Master of Computer Science",
+      "school": "Moscow Institute of Physics and Technology",
+      "period": "2023 - 2025",
+      "focus": "Artificial Intelligence & Blockchain"
+    },
+    "bachelors": {
+      "degree": "Bachelor of Computer Science",
+      "school": "Innopolis University",
+      "period": "2019 - 2023",
+      "focus": "Software Engineering"
+    }
+  }
+} 
