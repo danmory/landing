@@ -199,9 +199,9 @@ export const Experience = () => {
       initial="hidden"
       animate="visible"
       variants={fadeIn}
-      className="bg-white rounded-lg shadow-sm p-6 bg-gradient-to-br from-white to-blue-50 border border-blue-100"
+      className="bg-white rounded-lg shadow-sm p-4 md:p-6 bg-gradient-to-br from-white to-blue-50 border border-blue-100"
     >
-      <div className="flex space-x-8 border-b border-blue-100 mb-6">
+      <div className="flex flex-wrap gap-4 md:gap-8 border-b border-blue-100 mb-4 md:mb-6">
         {[
           { id: "projects", label: t("tabs.featuredProjects") },
           { id: "experience", label: t("tabs.workExperience") },
@@ -210,7 +210,7 @@ export const Experience = () => {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id as TabType)}
-            className={`pb-4 text-sm font-medium transition-colors relative ${
+            className={`pb-2 md:pb-4 text-sm font-medium transition-colors relative ${
               activeTab === tab.id
                 ? "text-blue-900"
                 : "text-blue-600 hover:text-blue-900"
@@ -226,7 +226,7 @@ export const Experience = () => {
           </button>
         ))}
       </div>
-      <div className="h-[500px] overflow-y-auto pr-2">{renderContent()}</div>
+      <div className="h-[400px] md:h-[500px] overflow-y-auto pr-2">{renderContent()}</div>
     </motion.div>
   );
 };
